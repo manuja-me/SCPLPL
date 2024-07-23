@@ -1,2 +1,2 @@
-# SCPLPL
-Simple Coding Projects to Learn Programming Languages
+# Simple Coding Projects to Learn Programming Languages
+---
