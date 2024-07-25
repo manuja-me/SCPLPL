@@ -1,6 +1,0 @@
-- 2 Inputs
-
-- one calculation (+,-,/,*,^,%)
-- should round up to 2 points if output is float
-- if 1 or 2 inputs are null throws a error message
-
