@@ -2,7 +2,7 @@ def main():
     todo_list = []
     
     while True:
-        command = input('Enter a command ( (a)dd ,(v)iew ,(c)complete ,(d)elete ,(e)xit ) : ')
+        command = input('Enter a command - (a)dd ,(v)iew ,(c)complete ,(d)elete ,(e)xit: ')
 
         if command == 'a':
             add_task(todo_list)
