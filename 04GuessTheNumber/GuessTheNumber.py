@@ -1,6 +1,7 @@
 import random
 
-def mainLoop():
+
+def mainFunc():
     randomInteger = random.randint(1, 1000)
 
     while True:
@@ -9,7 +10,7 @@ def mainLoop():
         except ValueError:
             print("Invalid input dawg! try again")
             continue
-        
+
         if inputNum == randomInteger:
             print("Congratulations, you're an officially toddler.py")
             break
@@ -18,4 +19,5 @@ def mainLoop():
         else:
             print("Too Low")
 
-mainLoop()
+
+mainFunc()
