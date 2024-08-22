@@ -4,15 +4,17 @@
 
 int main() {
   int inputNum;
+  const int MIN = 1;
+  const int MAX = 1000;
 
   srand(time(NULL));
-  int randomNum = rand() % 1000 + 1;
+  int randomNum = (rand() % MAX) + MIN;
 
   while (1) {
     printf("Give me a number between 1 to 1000: ");
     scanf("%d", &inputNum);
 
-    if (inputNum >= 1 && inputNum <= 1000) {
+    if (inputNum >= MIN && inputNum <= MAX) {
       if (inputNum == randomNum) {
         printf("Congratulations, You're now officially toddler.c\n");
         break;
