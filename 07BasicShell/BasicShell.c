@@ -17,9 +17,9 @@ int main() {
   char *args[MAX_ARGS];
 
   while (1) {
-    printf("shell$ ");
+    printf("shell$ "); // display prompt
     if (fgets(input, MAX_LINE, stdin) == NULL) {
-      break;
+      break; // exit on EOF (C + D)
     }
 
     parse_input(input, args);
