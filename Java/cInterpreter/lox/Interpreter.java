@@ -3,6 +3,8 @@ package cInterpreter.lox;
 import java.util.List;
 
 class Interpreter implements Expr.Visitor<object>, Stmt.Visitor<void> {
+  
+  private Environment environment = new Environment();
 
   @Override
   public Object visitLiteralExpr(Expr.Literal expr) {
@@ -32,6 +34,17 @@ class Interpreter implements Expr.Visitor<object>, Stmt.Visitor<void> {
   public Void visitPrintStmt(Stmt.Print stmt) {
     Object value = evaluate(stmt.expression);
     System.out.println(stringify(value));
+    return null;
+  }
+
+  @Override
+  public Void visitVarStmt(Stmt.Var stmt) {
+    Object value = null;
+    if (stmt.initializer != null) {
+      value = evaluate(Stmt.initializer);
+    }
+
+    environment.define(stmt.name.lexeme, value);
     return null;
   }
 
@@ -96,6 +109,11 @@ class Interpreter implements Expr.Visitor<object>, Stmt.Visitor<void> {
 
     // Unreachable
     return null;
+  }
+
+  @Override
+  public Object visitVariableExpr(Expr.Variable expr) {
+    return environment.get(expr.name);
   }
 
   private void checkNumberOperand(Token operator, Object operand) {
